@@ -25,17 +25,17 @@ def forward(image_number):     #initial image_number=2
 	global button_back
 	my_label.grid_forget() #when the forward function gets called we want to take the image that is already there and get rid of it.
 	#If we dont get rid of current image and after that we click forward then the 2 images(next and current) will overlap
-    my_label=Label(image=image_list[image_number-1]) #telling the program what the new image should be
-    #image we want to show when we click forward first time is the image at index 1.(remember we have set image_number=2)
-    button_forward=Button(root,text="Forward",command=lambda:forward(image_number+1))
-    button_back=Button(root,text="Back",command=lambda:back(image_number-1))
+        my_label=Label(image=image_list[image_number-1]) #telling the program what the new image should be
+        #image we want to show when we click forward first time is the image at index 1.(remember we have set image_number=2)
+        button_forward=Button(root,text="Forward",command=lambda:forward(image_number+1))
+        button_back=Button(root,text="Back",command=lambda:back(image_number-1))
 
-    if image_number==5:
-    	button_forward=Button(root,text="Forward",state=DISABLED)
+        if image_number==5:
+    	   button_forward=Button(root,text="Forward",state=DISABLED)
    
-    my_label.grid(row=0,column=0,columnspan=3)
-    button_forward.grid(row=1,column=2)
-    button_back.grid(row=1,column=0)
+        my_label.grid(row=0,column=0,columnspan=3)
+        button_forward.grid(row=1,column=2)
+        button_back.grid(row=1,column=0)
  
     
      
@@ -46,11 +46,11 @@ def back(image_number):
 	my_label.grid_forget()   #again to prevent overlapping as in forward function
 	my_label=Label(image=image_list[image_number-1])
 	button_forward=Button(root,text="Forward",command=lambda:forward(image_number+1))
-    button_back=Button(root,text="Back",command=lambda:back(image_number-1))
+        button_back=Button(root,text="Back",command=lambda:back(image_number-1))
 
-    my_label.grid(row=0,column=0,columnspan=3)
-    button_forward.grid(row=1,column=2)
-    button_back.grid(row=1,column=0)
+        my_label.grid(row=0,column=0,columnspan=3)
+        button_forward.grid(row=1,column=2)
+        button_back.grid(row=1,column=0)
 
 
 button_back=Button(root,text="Back",command=back)
